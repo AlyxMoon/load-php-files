@@ -4,6 +4,11 @@
 
 The **Load Php Files** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). This plugin provides an easy way for users to create pages and load arbitrary PHP files as the content for that page.
 
+## Current Limitations and Issues
+
+- I cannot get the `file` field in forms to upload PHP files. This seems to be disabled, as no options set for the `allow` config let's a PHP file be uploaded
+- Likewise, I cannot get the `filepicker` field to show PHP files in a directory, these also seem to be ignored.
+
 ## Installation
 
 Installing the Load Php Files plugin can be done in one of three ways: The GPM (Grav Package Manager) installation method lets you quickly install the plugin with a simple terminal command, the manual method lets you do so via a zip file, and the admin method lets you do so via the Admin Plugin.

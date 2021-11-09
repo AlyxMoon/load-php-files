@@ -1,0 +1,21 @@
+title: Display PHP Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          unset-fields@: true
+          fields:
+            header.php.files:
+              type: list
+              label: PHP files to load in this page
+              style: vertical
+              fields:
+                .file:
+                  type: text
+                  label: Enter PHP file name
+                  description: PHP files should exist in the user/data/load-php-files directory. Enter the filename without the php extension.
