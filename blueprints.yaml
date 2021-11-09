@@ -1,0 +1,36 @@
+name: Load Php Files
+slug: load-php-files
+type: plugin
+version: 0.1.0
+description: This plugin provides an easy way for users to create pages and load arbitrary PHP files as the content for that page.
+icon: plug
+author:
+  name: Allister Kays
+  email: allisterkmoon@gmail.com
+homepage: https://github.com/AlyxMoon/grav-plugin-load-php-files
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/AlyxMoon/grav-plugin-load-php-files/issues
+docs: https://github.com/AlyxMoon/grav-plugin-load-php-files/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: PLUGIN_LOAD_PHP_FILES.TEXT_VARIABLE
+      help: PLUGIN_LOAD_PHP_FILES.TEXT_VARIABLE_HELP
