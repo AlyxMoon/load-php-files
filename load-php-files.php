@@ -11,7 +11,8 @@ class LoadPhpFilesPlugin extends Plugin
     {
         return [
             'onGetPageTemplates' => ['onGetPageTemplates', 0],
-            'onPluginsInitialized' => ['onPluginsInitialized', 0]
+            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0]
         ];
     }
 
@@ -25,6 +26,11 @@ class LoadPhpFilesPlugin extends Plugin
         $event->types->register(
             'display-php-content',
             'plugins://load-php-files/blueprints/pages/display-php-content.yaml'
+        );
+
+        $event->types->register(
+            'modular/display-php-content-modular',
+            'plugins://load-php-files/blueprints/pages/modular/display-php-content.yaml'
         );
     }
 
@@ -42,6 +48,11 @@ class LoadPhpFilesPlugin extends Plugin
     public function onTwigExtensions(): void
     {
         require_once(__DIR__ . '/twig/LoadPhpFilesTwigExtension.php');
-        $this->grav['twig']->twig->addExtensions(new LoadPhpFilesTwigExtension());
+        $this->grav['twig']->twig->addExtension(new LoadPhpFilesTwigExtension());
+    }
+
+    public function onTwigTemplatePaths(): void
+    {
+        $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
 }

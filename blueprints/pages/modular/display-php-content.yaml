@@ -1,4 +1,4 @@
-title: Display PHP Content
+title: Display PHP Content Modular Item
 extends@: default
 
 form:

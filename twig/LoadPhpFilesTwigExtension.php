@@ -17,6 +17,8 @@ class LoadPhpFilesTwigExtension extends \Twig_Extension
 
   public function loadPHP($path)
   {
-    return $path;
+    ob_start();
+    include (GRAV_ROOT . '/user/data/load-php-files/' . $path . '.php');
+    return ob_get_clean();
   }
 }
